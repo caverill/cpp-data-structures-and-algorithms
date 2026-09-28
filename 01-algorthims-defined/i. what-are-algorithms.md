@@ -1,4 +1,4 @@
-**# What Are Algorithms?
+# What Are Algorithms?
 
 An **algorithm** is a set of steps used to solve a problem or set of problems. A **problem** can have many **solutions**, and different **algorithms** can be used to find those solutions with varying levels of **efficiency**.
 
@@ -123,5 +123,3 @@ Algorithmic efficiency is mainly measured using two concepts:
 - **Space Complexity** → how the amount of memory required grows as the input size increases.
 
 In our guessing example, we are mainly concerned with **time complexity** because we are comparing the number of guesses required.
-
-**
