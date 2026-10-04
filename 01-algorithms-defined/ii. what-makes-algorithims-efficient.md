@@ -1,32 +1,37 @@
-## What Makes an Algorithm Efficient?
+# What Makes an Algorithm Efficient?
 
-Algorithmic efficiency is mainly measured using two concepts:
+Algorithmic efficiency describes how effectively an algorithm uses resources as the input gets larger.
 
-- **Time Complexity** → measures how the runtime of an algorithm grows as the amount of input increases.
-- **Space Complexity** → measures how much memory an algorithm requires as the amount of input increases.
+The two main resources we look at are:
 
-An algorithm can be extremely fast, but that speed may not matter if it requires more memory than the computer has available.
+- **Time Complexity** → how the amount of work grows as the input size increases
+- **Space Complexity** → how the amount of memory required grows as the input size increases
 
-Likewise, an algorithm that uses very little memory may not be practical if it takes too long to run.
+An algorithm can be very fast but require too much memory.
 
-Therefore, an efficient algorithm usually involves finding a good **balance between time and space usage**.
+Likewise, an algorithm can use very little memory but take too long to run.
+
+Choosing an efficient algorithm often involves finding a good **balance between time and space**.
 
 ---
+
 ## Worst-Case Performance
 
-One way to measure an algorithm's efficiency is by looking at its **worst-case performance** — the maximum number of operations or comparisons it may need to complete a task.
+One way to compare algorithms is by looking at their **worst-case performance**.
+
+The worst case represents the maximum amount of work an algorithm may need to perform for an input of size `n`.
 
 For example, when searching through **100 items**:
 
-- **Linear Search** → may require up to **100 comparisons** in the worst case.
-- **Binary Search** → may require only about **7 comparisons** in the worst case.
+- **Linear Search** → up to 100 comparisons
+- **Binary Search** → about 7 comparisons
 
-This difference becomes much more significant as the amount of data increases.
+As the amount of data increases, the difference becomes much more significant.
 
-#### Linear Search vs. Binary Search
+**Linear Search vs. Binary Search**
 
-| Number of Items | Linear Search O(n) | Binary Search O(log n) |
-|---:|---:|---:|
+| Number of Items | Linear Search `O(n)` | Binary Search `O(log n)` |
+| ---: | ---: | ---: |
 | 10 | 10 | 4 |
 | 100 | 100 | 7 |
 | 1,000 | 1,000 | 10 |
@@ -34,39 +39,47 @@ This difference becomes much more significant as the amount of data increases.
 | 100,000 | 100,000 | 17 |
 | 1,000,000 | 1,000,000 | 20 |
 
-Different algorithms grow at different rates. By evaluating an algorithm's **rate of growth**, we can get a better idea of how well it will perform as the input size `n` becomes larger.
+Different algorithms grow at different rates.
 
-This is important because two algorithms may perform similarly with small inputs, but their performance can become drastically different as `n` increases.
+Looking at this **rate of growth** helps us understand how well an algorithm will scale as the input size `n` becomes larger.
 
 ---
 
 ## Algorithm Trade-Offs
 
-The most efficient algorithm is not always the best choice in every situation.
+The algorithm with the fastest runtime is not always the best choice.
 
-Different algorithms may have different requirements or trade-offs involving:
+Different algorithms can involve trade-offs such as:
 
-- **Speed**
-- **Memory usage**
-- **Input size**
-- **How the data is organized**
-- **The cost of preparing the data**
+- Speed
+- Memory usage
+- Input size
+- How the data is organized
+- The cost of preparing the data
 
-For example, **binary search** is much faster than linear search for large datasets, but it requires the data to already be **sorted**.
+**Example**
 
-A linear search can work on unsorted data immediately, while binary search may require the data to be sorted first.
+Binary search is much faster than linear search for large collections, but binary search requires the data to be **sorted**.
+
+Linear search can immediately search unsorted data.
+
+This means choosing an algorithm depends on more than just its speed.
 
 ---
 
 ## Why Not Measure Exact Runtime?
 
-The exact runtime of an algorithm can vary depending on factors such as:
+We could measure how many seconds an algorithm takes to run, but that result can change depending on:
 
-- The speed of the computer
-- The programming language
-- The compiler
+- Computer speed
+- Programming language
+- Compiler
 - Other programs running at the same time
 
-Because of this, measuring an algorithm only by seconds does not give us a consistent way to compare algorithms.
+Because of this, exact runtime does not give us a consistent way to compare algorithms.
 
-Instead, we focus on how the number of operations grows as the input size `n` increases.
+Instead, we focus on:
+
+> **How does the amount of work grow as the input size `n` increases?**
+
+This rate of growth is what **Big O notation** helps us describe.
